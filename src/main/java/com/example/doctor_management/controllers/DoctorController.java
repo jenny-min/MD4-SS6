@@ -30,4 +30,9 @@ public class DoctorController {
         ds.deleteDoctors(id);
         return ResponseEntity.ok().build();//Trả về 204 - Xóa thành công
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Doctor> updateDoctors(@RequestBody Doctor doctor, @PathVariable Long id) {
+        return ResponseEntity.ok(ds.updateDoctor(id, doctor));
+    }
 }
