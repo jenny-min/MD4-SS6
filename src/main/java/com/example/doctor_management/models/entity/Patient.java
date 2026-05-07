@@ -2,6 +2,9 @@ package com.example.doctor_management.models.entity;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "patient")
 public class Patient {
@@ -20,6 +23,9 @@ public class Patient {
 
     @Column(name = "address", length = 200, nullable = false)
     private String address;
+
+    @OneToMany(mappedBy = "patient")
+    private Set<MedicalRecord> medicalRecords = new HashSet<>();
 
     public Patient() {
     }

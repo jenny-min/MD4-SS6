@@ -1,7 +1,5 @@
 package com.example.doctor_management.models.dto;
 
-import com.example.doctor_management.models.entity.Patient;
-
 import java.util.List;
 
 public class PaginationResponse<Patient> {
